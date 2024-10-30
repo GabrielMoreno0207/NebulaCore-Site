@@ -1,0 +1,16 @@
+{
+  "name": "NebulaCore",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Gabriel Moreno",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/styles/styles.css -o ./build/styles/main.css -w",
+    "build": "NODE_ENV=production npx tailwindcss -i ./src/css/tailwind.css -o ./build/css/main.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.4"
+  }
+}
