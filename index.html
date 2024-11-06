@@ -1691,7 +1691,7 @@
         </div>
 
         <!-- Imagem para telas menores -->
-        <div class="mt-8 md:hidden flex justify-center">
+        <div class="mt-4 md:hidden flex justify-center">
             <img
                 src="./images/img1.png"
                 alt="Imagem representativa do desenvolvimento"
@@ -1798,211 +1798,128 @@
           </p> -->
         </div>
 
-        <!-- Faqs -->
-        <div class="relative mt-8 flex flex-wrap items-stretch justify-center">
-          <!-- Faq 1 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
-          >
-            <!-- left borders -->
-            <div
-              class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.025] to-violet-200/[0.1]"
-            ></div>
-            <!-- bottom borders -->
-            <div
-              class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.025] to-violet-200/[0.1]"
-            ></div>
-            <!-- Right borders -->
-            <div
-              class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.05] md:hidden"
-            ></div>
+       <!-- Faqs -->
+<div class="relative mt-8 flex flex-wrap items-stretch justify-center">
+  <!-- Faq 1 -->
+  <div
+    x-data="{ open: false }"
+    class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
+  >
+    <!-- left borders -->
+    <div class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.025] to-violet-200/[0.1]"></div>
+    <!-- bottom borders -->
+    <div class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.025] to-violet-200/[0.1]"></div>
+    <!-- Right borders -->
+    <div class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.05] md:hidden"></div>
 
-            <span
-              class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"
-            ></span>
-            <div class="relative h-full w-full overflow-hidden">
-              <div
-                class="absolute bottom-1/2 left-1/2 right-0 top-0 opacity-0 duration-300 ease-in-out group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="opacity-0 duration-1000 ease-in-out"
-                  data-starfield
-                  data-max-radius="1.75"
-                  data-min-radius="1"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="hover-gradient absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/20 to-[#E478FF]/20 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
-                <dt
-                  class="text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
-                >
-                  Tenho um projeto ja iniciado, como posso dar continuidade com vocês?
-                </dt>
-                <dd
-                  class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8"
-                >
-                Após finalizar o contrato com a empresa anterior, entre em contato conosco. Vamos analisar o projeto e criar um plano de ação para realizar as correções e desenvolvimentos necessários. Estamos prontos para ajudar!                </dd>
-              </dl>
-            </div>
-          </div>
+    <span class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"></span>
+    <div class="relative h-full w-full overflow-hidden">
+      <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
+        <dt
+          @click="open = !open"
+          class="cursor-pointer text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
+        >
+          Tenho um projeto já iniciado, como posso dar continuidade com vocês?
+        </dt>
+        <dd
+          x-show="open"
+          x-cloak
+          class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8 transition-all duration-300 ease-in-out"
+        >
+          Após finalizar o contrato com a empresa anterior, entre em contato conosco. Vamos analisar o projeto e criar um plano de ação para realizar as correções e desenvolvimentos necessários. Estamos prontos para ajudar!
+        </dd>
+      </dl>
+    </div>
+  </div>
 
-          <!-- Faq 2 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
-          >
-            <!-- left borders -->
-            <div
-              class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.05]"
-            ></div>
-            <!-- bottom borders -->
-            <div
-              class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.1] to-violet-200/[0.025]"
-            ></div>
-            <!-- Right borders -->
-            <div
-              class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.025] md:from-violet-200/[0.025] md:to-violet-200/[0.1]"
-            ></div>
+  <!-- Faq 2 -->
+  <div
+    x-data="{ open: false }"
+    class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
+  >
+    <div class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.05]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.1] to-violet-200/[0.025]"></div>
+    <div class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.025] md:from-violet-200/[0.025] md:to-violet-200/[0.1]"></div>
 
-            <span
-              class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"
-            ></span>
-            <div class="relative h-full w-full overflow-hidden">
-              <div
-                class="absolute bottom-1/2 left-1/2 right-0 top-0 opacity-0 duration-300 ease-in-out group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="opacity-0 duration-1000 ease-in-out"
-                  data-starfield
-                  data-max-radius="1.75"
-                  data-min-radius="1"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="hover-gradient absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/20 to-[#E478FF]/20 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
-                <dt
-                  class="text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
-                >
-                Vocês oferecem suporte após o lançamento do site?
-                </dt>
-                <dd
-                  class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8"
-                >
-                Sim, oferecemos suporte contínuo após o lançamento do site. Isso inclui manutenção (GRÁTIS NO PRIMEIRO MS), atualizações, correções de bugs e suporte técnico para garantir que o site funcione corretamente e atenda às expectativas do cliente.
-                </dd>
-              </dl>
-            </div>
-          </div>
+    <span class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"></span>
+    <div class="relative h-full w-full overflow-hidden">
+      <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
+        <dt
+          @click="open = !open"
+          class="cursor-pointer text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
+        >
+          Vocês oferecem suporte após o lançamento do site?
+        </dt>
+        <dd
+          x-show="open"
+          x-cloak
+          class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8 transition-all duration-300 ease-in-out"
+        >
+          Sim, oferecemos suporte contínuo após o lançamento do site. Isso inclui manutenção (GRÁTIS NO PRIMEIRO MS), atualizações, correções de bugs e suporte técnico para garantir que o site funcione corretamente e atenda às expectativas do cliente.
+        </dd>
+      </dl>
+    </div>
+  </div>
 
-          <!-- Faq 3 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
-          >
-            <!-- left borders -->
-            <div
-              class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.1] md:from-violet-200/[0.1] md:to-violet-200/[0.025]"
-            ></div>
-            <!-- bottom borders -->
-            <div
-              class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.1] to-violet-200/[0.025]"
-            ></div>
-            <!-- Right borders -->
-            <div
-              class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.025] to-violet-200/[0.05] md:hidden"
-            ></div>
+  <!-- Faq 3 -->
+  <div
+    x-data="{ open: false }"
+    class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
+  >
+    <div class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.1] md:from-violet-200/[0.1] md:to-violet-200/[0.025]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.1] to-violet-200/[0.025]"></div>
+    <div class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.025] to-violet-200/[0.05] md:hidden"></div>
 
-            <span
-              class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"
-            ></span>
-            <div class="relative h-full w-full overflow-hidden">
-              <div
-                class="absolute bottom-1/2 left-1/2 right-0 top-0 opacity-0 duration-300 ease-in-out group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="opacity-0 duration-1000 ease-in-out"
-                  data-starfield
-                  data-max-radius="1.75"
-                  data-min-radius="1"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="hover-gradient absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/20 to-[#E478FF]/20 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
-                <dt
-                  class="text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
-                >
-                O que é um dashboard analítico e como ele pode ajudar meu negócio?
-                </dt>
-                <dd
-                  class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8"
-                >
-                Um dashboard analítico é uma ferramenta visual que apresenta dados e métricas em tempo real, permitindo que os usuários monitorem o desempenho e tomem decisões informadas. Ele ajuda as empresas a identificar tendências, acompanhar resultados de campanhas e otimizar estratégias com base em dados concretos.
-                </dd>
-              </dl>
-            </div>
-          </div>
+    <span class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"></span>
+    <div class="relative h-full w-full overflow-hidden">
+      <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
+        <dt
+          @click="open = !open"
+          class="cursor-pointer text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
+        >
+          O que é um dashboard analítico e como ele pode ajudar meu negócio?
+        </dt>
+        <dd
+          x-show="open"
+          x-cloak
+          class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8 transition-all duration-300 ease-in-out"
+        >
+          Um dashboard analítico é uma ferramenta visual que apresenta dados e métricas em tempo real, permitindo que os usuários monitorem o desempenho e tomem decisões informadas. Ele ajuda as empresas a identificar tendências, acompanhar resultados de campanhas e otimizar estratégias com base em dados concretos.
+        </dd>
+      </dl>
+    </div>
+  </div>
 
-          <!-- Faq 4 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
-          >
-            <!-- left borders -->
-            <div
-              class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.025] md:from-violet-200/[0.05] md:to-violet-200/[0.1]"
-            ></div>
-            <!-- bottom borders -->
-            <div
-              class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.025] to-violet-200/[0.1]"
-            ></div>
-            <!-- Right borders -->
-            <div
-              class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.1] md:from-violet-200/[0.1] md:to-violet-200/[0.025]"
-            ></div>
+  <!-- Faq 4 -->
+  <div
+    x-data="{ open: false }"
+    class="group relative w-full bg-gradient-to-b after:absolute after:content-[''] md:w-1/2"
+  >
+    <div class="absolute inset-y-0 left-0 h-full w-px bg-gradient-to-b from-violet-200/[0.1] to-violet-200/[0.025] md:from-violet-200/[0.05] md:to-violet-200/[0.1]"></div>
+    <div class="absolute inset-x-0 bottom-0 h-px w-full bg-gradient-to-r from-violet-200/[0.025] to-violet-200/[0.1]"></div>
+    <div class="absolute inset-y-0 right-0 h-full w-px bg-gradient-to-b from-violet-200/[0.05] to-violet-200/[0.1] md:from-violet-200/[0.1] md:to-violet-200/[0.025]"></div>
 
-            <span
-              class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"
-            ></span>
-            <div class="relative h-full w-full overflow-hidden">
-              <div
-                class="absolute bottom-1/2 left-1/2 right-0 top-0 opacity-0 duration-300 ease-in-out group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="opacity-0 duration-1000 ease-in-out"
-                  data-starfield
-                  data-max-radius="1.75"
-                  data-min-radius="1"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="hover-gradient absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/20 to-[#E478FF]/20 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
-                <dt
-                  class="text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
-                >
-                Como posso acompanhar o progresso do meu projeto?
-                </dt>
-                <dd
-                  class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8"
-                >
-                Mantemos uma comunicação aberta durante todo o processo de desenvolvimento, fornecendo atualizações regulares. Também realizamos reuniões esporádicas pelo Google Meet para discutir o progresso e permitir feedback em diferentes etapas do projeto.
-                </dd>
-              </dl>
-            </div>
-          </div>
-        </div>
+    <span class="absolute -left-[0.5px] top-1/2 h-8 w-px -translate-y-1/2 translate-x-1/2 bg-violet-100/25 md:bg-violet-100/40"></span>
+    <div class="relative h-full w-full overflow-hidden">
+      <dl class="relative h-full w-full p-5 sm:px-6 sm:py-7 lg:p-12">
+        <dt
+          @click="open = !open"
+          class="cursor-pointer text-base font-bold leading-7 text-violet-50 sm:text-[17px] lg:text-lg"
+        >
+          Como posso acompanhar o progresso do meu projeto?
+        </dt>
+        <dd
+          x-show="open"
+          x-cloak
+          class="mt-2 text-base leading-7 text-zinc-300 sm:mt-3 sm:text-[17px] lg:text-lg lg:leading-8 transition-all duration-300 ease-in-out"
+        >
+          Mantemos uma comunicação aberta durante todo o processo de desenvolvimento, fornecendo atualizações regulares. Também realizamos reuniões esporádicas pelo Google Meet para discutir o progresso e permitir feedback em diferentes etapas do projeto.
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   
@@ -3196,6 +3113,44 @@
         </div>
       </div>
     </section>
+
+    <script>
+      var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?39738';
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = url;
+      var options = {
+      "enabled":true,
+      "chatButtonSetting":{
+          "backgroundColor":"#8b5cf6",
+          "ctaText":"Converse conosco",
+          "borderRadius":"25",
+          "marginLeft": "0",
+          "marginRight": "20",
+          "marginBottom": "20",
+          "ctaIconWATI":false,
+          "position":"right"
+      },
+      "brandSetting":{
+          "brandName":"Nebula Core",
+          "brandSubTitle":"undefined",
+          "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+          "welcomeText":"Estamos prontos para conversar!",
+          "messageText":"Ola, gostaria de conversar sobre seus serviços!",
+          "backgroundColor":"#8b5cf6",
+          "ctaText":"Converse conosco",
+          "borderRadius":"25",
+          "autoShow":false,
+          "phoneNumber":"18998244817"
+      }
+      };
+      s.onload = function() {
+          CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+  </script>
 
     <script type="module">
       // be sure to specify the exact version
