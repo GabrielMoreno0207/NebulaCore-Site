@@ -19,7 +19,7 @@ var options = {
 "brandSetting":{
     "brandName":"Nebula Core",
     "brandSubTitle":"undefined",
-    "brandImg":"https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+    "brandImg":"./images/iconnc.png",
     "welcomeText":"Estamos prontos para conversar!",
     "messageText":"Ola, gostaria de conversar sobre seus serviços!",
     "backgroundColor":"#8b5cf6",
