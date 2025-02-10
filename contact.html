@@ -18,16 +18,20 @@
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
 
+    <!-- EmailJS-->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
     <!-- Starfield -->
     <script src="./js/starfield.js" defer></script>
      <!-- WPP BUTTON-->
      <script src="./js/wppbutton.js"></script>
+    
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="./images/nebulacore.png" />
 
     <!-- PAGE TITLE -->
-    <title>Contato Nebula Core</title>
+    <title>Contato | Nebula Core</title>
     <meta
       name="description"
       content="Need assistance or have questions? Contact Nebula's team for prompt support and information."
@@ -629,7 +633,7 @@
                 <span
                   class="absolute -bottom-[1.5px] -right-[1.5px] h-1 w-1 rounded-full bg-violet-200"
                 ></span>
-                <form action="#" method="POST">
+                <form id="contact-form">
                   <div
                     class="space-y-8 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:space-y-0"
                   >
@@ -717,7 +721,6 @@
                           background-color: #6b6b6b; /* Cor de fundo quando em foco */
                         }
                       </style>
-                      
                     </div>
 
                     <div>
@@ -790,6 +793,34 @@
                     </button>
                   </div>
                 </form>
+
+
+
+  <script>
+    // Inicializa o EmailJS com seu UserID
+    (function() {
+      emailjs.init("wUZV31j1hfPNljns8"); // Substitua pelo seu ID de usuário do EmailJS
+    })();
+
+    // Envia o formulário
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede o envio tradicional do formulário
+
+      var form = event.target;
+
+      // Envia o formulário usando EmailJS
+      emailjs.sendForm("service_beuqf9d", "template_c7fnast", form)
+        .then(function(response) {
+          alert("Mensagem enviada com sucesso!");
+          form.reset(); // Limpa o formulário
+        }, function(error) {
+          alert("Erro ao enviar mensagem: " + error.text);
+        });
+    });
+  </script>
+</body>
+</html>
+
               </div>
             </div>
           </div>
@@ -802,295 +833,7 @@
       class="mx-auto h-[0.75px] w-full max-w-screen-lg bg-gradient-to-r from-transparent via-violet-100/15 to-transparent"
     ></div>
 
-    <!-- Popular links section -->
-    <section class="relative overflow-x-clip">
-      <div
-        class="absolute -left-56 -right-56 -top-80 sm:-left-48 sm:-right-48 md:left-1/2 md:w-full md:max-w-6xl md:-translate-x-1/2 lg:-top-32"
-      >
-        <image
-          src="./images/space-spotlight.png"
-          alt=""
-          class="object-contain w-full h-full opacity-25"
-        />
-      </div>
-
-      <div
-        class="relative w-full max-w-lg gap-16 px-5 pt-20 pb-16 mx-auto sm:max-w-screen-xl sm:px-6 sm:pb-20 sm:pt-24 lg:px-8 lg:pb-24"
-      >
-        <div class="absolute bottom-0 -left-96 -right-96 -top-48 -z-10">
-          <img
-            src="./images/cosmic-butterfly.png"
-            alt=""
-            class="h-[calc(100%_+_336px)] w-[calc(100%_+_768px)] opacity-10"
-          />
-        </div>
-
-        <!-- Text content -->
-        <div class="flex flex-col items-center">
-          <div
-            class="flex items-center rounded-full bg-zinc-950/[.01] shadow-inner-blur"
-          >
-            <div
-              class="flex h-full w-full items-center space-x-2 rounded-full border border-violet-200/[.06] px-4 py-1.5"
-            >
-              <svg
-                class="h-3.5 w-3.5 text-violet-200"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-              >
-                <title>url</title>
-                <g fill="currentColor">
-                  <path
-                    d="M10.742,5.258a4.475,4.475,0,0,0-.825-.64L8.435,6.1a2.531,2.531,0,0,1,.893,4.158l-3,3A2.536,2.536,0,0,1,2.742,9.672L2.8,9.61A6,6,0,0,1,2.43,7.535c0-.134.01-.266.019-.4L1.328,8.258a4.535,4.535,0,0,0,6.414,6.414l3-3a4.536,4.536,0,0,0,0-6.414Z"
-                  ></path>
-                  <path
-                    d="M5.26,10.74a4.508,4.508,0,0,0,.825.64L7.567,9.9A2.531,2.531,0,0,1,6.674,5.74l3-3A2.536,2.536,0,0,1,13.26,6.326l-.062.062a5.982,5.982,0,0,1,.375,2.075c0,.134-.011.266-.02.4L14.674,7.74A4.535,4.535,0,0,0,8.26,1.326l-3,3a4.536,4.536,0,0,0,0,6.414Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-              </svg>
-
-              <span
-                class="text-sm font-medium text-violet-100 drop-shadow-[-12px_-4px_6px_rgba(237,233,254,0.2)]"
-              >
-                Support and resources
-              </span>
-            </div>
-          </div>
-
-          <h1
-            class="max-w-5xl mt-5 text-4xl font-bold text-center leading-extratight text-violet-100 sm:mt-6 sm:text-5xl sm:leading-extratight"
-          >
-            Explore nossas redes sociais e contatos!
-          </h1>
-          <p
-            class="mt-5 max-w-2xl text-center text-[17px] leading-8 text-zinc-200 sm:text-lg sm:leading-8"
-          >
-            Lorem ipsum dolor sit amet magna eleifend aliquam diam egestas sed
-            facilisi non cras. In bibendum eu eget porttitor ultricies.
-          </p>
-        </div>
-
-        <!-- Popular links -->
-        <div class="relative flex flex-wrap items-stretch justify-center mt-8">
-        
-          <!-- Link 3 -->
-          <div
-            class="group relative w-full bg-gradient-to-b before:absolute before:left-0 before:hidden before:h-full before:w-px before:bg-gradient-to-b before:from-violet-200/[.015] before:to-violet-200/[0.125] before:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-px after:w-full after:bg-gradient-to-r after:from-violet-200/[0.15] after:to-violet-200/[0.075] after:content-[''] sm:w-1/3 before:sm:block sm:after:from-violet-200/[0.125] sm:after:to-transparent"
-          >
-            <div class="relative w-full h-full overflow-hidden">
-              <div
-                class="absolute top-0 right-0 duration-300 ease-in-out opacity-0 bottom-1/3 left-1/3 group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="duration-1000 ease-in-out opacity-0"
-                  data-starfield
-                  data-min-radius="1"
-                  data-max-radius="1.75"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/10 to-[#E478FF]/10 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <div
-                class="relative z-10 flex flex-col justify-between flex-1 w-full h-full px-4 py-5 sm:px-5 sm:py-6 lg:py-7 xl:p-8"
-              >
-                <div class="flex-1">
-                  <img src="images/logos/icons/instagram.png" alt="instagram">
-
-                  <h4
-                    class="mt-5 text-base font-semibold text-violet-50 xl:mt-6 xl:text-lg"
-                  >
-                    Stay in the loop
-                  </h4>
-                  <p
-                    class="mt-2.5 line-clamp-3 text-base text-zinc-300 xl:text-lg"
-                  >
-                    <span class="sm:hidden"
-                      >Stay updated with the latest news on Twitter.</span
-                    >
-                    <span class="hidden sm:inline"
-                      >Stay updated with the latest news, updates, and insights
-                      by following us on X, formerly known as Twitter.</span
-                    >
-                  </p>
-                </div>
-                <div class="mt-4 xl:mt-5">
-                  <a
-                    href="https://twitter.com"
-                    class="flex items-center text-sm font-medium duration-200 ease-in-out text-violet-300/70 group-hover:text-violet-300 xl:text-base"
-                  >
-                    <span class="absolute inset-0"></span>
-                    Follow us
-                    <svg
-                      class="ml-2.5 h-2.5 w-2.5 xl:h-3 xl:w-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                    >
-                      <title>arrow-top-right</title>
-                      <g fill="currentColor">
-                        <path
-                          d="M14,1H7A1,1,0,0,0,7,3h4.586L1.293,13.293a1,1,0,1,0,1.414,1.414L13,4.414V9a1,1,0,0,0,2,0V2A1,1,0,0,0,14,1Z"
-                          fill="currentColor"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Link 4 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:inset-x-0 after:bottom-0 after:h-px after:w-full after:bg-gradient-to-r after:from-violet-200/[0.075] after:to-violet-200/[0.025] after:content-[''] sm:w-1/3 sm:after:left-1/2 sm:after:top-[-3.5px] sm:after:block sm:after:h-1.5 sm:after:w-1.5 sm:after:translate-x-[-2.5px] sm:after:rounded-full sm:after:bg-violet-200"
-          >
-            <div class="relative w-full h-full overflow-hidden">
-              <div
-                class="absolute top-0 right-0 duration-300 ease-in-out opacity-0 bottom-1/3 left-1/3 group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="duration-1000 ease-in-out opacity-0"
-                  data-starfield
-                  data-min-radius="1"
-                  data-max-radius="1.75"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/10 to-[#E478FF]/10 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <div
-                class="relative z-10 flex flex-col justify-between flex-1 w-full h-full px-4 py-5 sm:px-5 sm:py-6 lg:py-7 xl:p-8"
-              >
-                <div class="flex-1">
-                 <img src="images/logos/icons/whatsapp.png" alt="whatsapp">
-
-                  <h4
-                    class="mt-5 text-base font-semibold text-violet-50 xl:mt-6 xl:text-lg"
-                  >
-                    Explore video library
-                  </h4>
-                  <p
-                    class="mt-2.5 line-clamp-3 text-base text-zinc-300 xl:text-lg"
-                  >
-                    <span class="sm:hidden"
-                      >Explore our video library on YouTube.</span
-                    >
-                    <span class="hidden sm:inline"
-                      >From detailed tutorials to user stories, discover how to
-                      get the most out of Nebula.</span
-                    >
-                  </p>
-                </div>
-                <div class="mt-4 xl:mt-5">
-                  <a
-                    href="https://youtube.com"
-                    class="flex items-center text-sm font-medium duration-200 ease-in-out text-violet-300/70 group-hover:text-violet-300 xl:text-base"
-                  >
-                    <span class="absolute inset-0"></span>
-                    Watch now
-                    <svg
-                      class="ml-2.5 h-2.5 w-2.5 xl:h-3 xl:w-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                    >
-                      <title>arrow-top-right</title>
-                      <g fill="currentColor">
-                        <path
-                          d="M14,1H7A1,1,0,0,0,7,3h4.586L1.293,13.293a1,1,0,1,0,1.414,1.414L13,4.414V9a1,1,0,0,0,2,0V2A1,1,0,0,0,14,1Z"
-                          fill="currentColor"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Link 5 -->
-          <div
-            class="group relative w-full bg-gradient-to-b after:absolute after:left-1/2 after:top-[-3.5px] after:hidden after:h-1.5 after:w-1.5 after:translate-x-[-2.5px] after:rounded-full after:bg-violet-200 after:content-[''] sm:w-1/3 sm:before:absolute sm:before:left-0 sm:before:h-full sm:before:w-px sm:before:bg-gradient-to-b sm:before:from-violet-200/[.25] sm:before:to-violet-200/[0.01] sm:before:content-[''] sm:after:block"
-          >
-            <div class="relative w-full h-full overflow-hidden">
-              <div
-                class="absolute top-0 right-0 duration-300 ease-in-out opacity-0 bottom-1/3 left-1/3 group-hover:opacity-100"
-                aria-hidden="true"
-              >
-                <canvas
-                  class="duration-1000 ease-in-out opacity-0"
-                  data-starfield
-                  data-min-radius="1"
-                  data-max-radius="1.75"
-                  data-density="high"
-                ></canvas>
-              </div>
-              <div
-                class="absolute inset-0 -z-10 bg-gradient-to-b from-[#575EFF]/10 to-[#E478FF]/10 opacity-0 blur-4xl duration-300 ease-in-out group-hover:opacity-100"
-              ></div>
-              <div
-                class="relative z-10 flex flex-col justify-between flex-1 w-full h-full px-4 py-5 sm:px-5 sm:py-6 lg:py-7 xl:p-8"
-              >
-                <div class="flex-1">
-                  <img src="images/logos/icons/linkedin.png" alt="linkedin">
-
-                  <h4
-                    class="mt-5 text-base font-semibold text-violet-50 xl:mt-6 xl:text-lg"
-                  >
-                    Join our network
-                  </h4>
-                  <p
-                    class="mt-2.5 line-clamp-3 text-base text-zinc-300 xl:text-lg"
-                  >
-                    <span class="sm:hidden"
-                      >Join our network for professional insights.</span
-                    >
-                    <span class="hidden sm:inline"
-                      >Join our LinkedIn network for professional insights,
-                      company news, and career opportunities.</span
-                    >
-                  </p>
-                </div>
-                <div class="mt-4 xl:mt-5">
-                  <a
-                    href="https://linkedin.com"
-                    class="flex items-center text-sm font-medium duration-200 ease-in-out text-violet-300/70 group-hover:text-violet-300 xl:text-base"
-                  >
-                    <span class="absolute inset-0"></span>
-                    Acompanhar Linkedin
-                    <svg
-                      class="ml-2.5 h-2.5 w-2.5 xl:h-3 xl:w-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                    >
-                      <title>arrow-top-right</title>
-                      <g fill="currentColor">
-                        <path
-                          d="M14,1H7A1,1,0,0,0,7,3h4.586L1.293,13.293a1,1,0,1,0,1.414,1.414L13,4.414V9a1,1,0,0,0,2,0V2A1,1,0,0,0,14,1Z"
-                          fill="currentColor"
-                        ></path>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- Divider -->
     <div
@@ -1209,7 +952,7 @@
             >
               <!-- Navigation columns -->
               <div
-                class="grid grid-cols-2 gap-12 sm:grid-cols-2 sm:gap-16 md:grid-cols-3 lg:grid-cols-5 lg:gap-8"
+                class="flex flex-wrap justify-center""
               >
                 <!-- Navigation column 1 -->
                 <div class="flex lg:justify-center">
@@ -1259,7 +1002,7 @@
                       <h4
                         class="ml-4 flex flex-col align-middle text-sm font-semibold text-zinc-400"
                       >
-                        Product
+                        Nebula
                       </h4>
                     </div>
                     <div class="mt-6 flex items-start">
@@ -1461,7 +1204,7 @@
                       <h4
                         class="ml-4 flex flex-col align-middle text-sm font-semibold text-zinc-400"
                       >
-                        Company
+                        Suporte
                       </h4>
                     </div>
                     <div class="mt-6 flex items-start">
@@ -1562,353 +1305,6 @@
                 </div>
 
                 <!-- Navigation column 3 -->
-                <div class="flex lg:justify-center">
-                  <div class="flex flex-col">
-                    <div class="flex items-center">
-                      <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                      >
-                        <g fill="#A1A1AA" stroke="#A78BFA">
-                          <path
-                            d="M10.998,3.826c2.054,.693,3.63,2.424,4.104,4.569"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M2.871,10.981c-.427-2.125,.284-4.356,1.905-5.839"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M13.131,14.443c-1.627,1.433-3.914,1.932-6.009,1.27"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <circle
-                            cx="9"
-                            cy="3.75"
-                            r="2"
-                            fill="none"
-                            stroke="#A1A1AA"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="3.804"
-                            cy="12.75"
-                            r="2"
-                            fill="none"
-                            stroke="#A1A1AA"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></circle>
-                          <circle
-                            cx="14.196"
-                            cy="12.75"
-                            r="2"
-                            fill="none"
-                            stroke="#A1A1AA"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></circle>
-                        </g>
-                      </svg>
-
-                      <h4
-                        class="ml-4 flex flex-col align-middle text-sm font-semibold text-zinc-400"
-                      >
-                        Integrations
-                      </h4>
-                    </div>
-                    <div class="mt-6 flex items-start">
-                      <div class="relative flex h-full w-5 justify-center">
-                        <div
-                          class="absolute -inset-y-2 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-violet-200/[0.12] to-violet-200/[0.04]"
-                        ></div>
-                      </div>
-
-                      <!-- Links -->
-                      <ul class="ml-4 space-y-5">
-                        <!-- Link 1 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Slack
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 2 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Trello
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 3 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Quickbooks
-                          </a>
-
-                          <div
-                            class="ml-3 inline-flex w-max rounded-full bg-zinc-950/[.01] shadow-inner-blur"
-                          >
-                            <div
-                              class="flex h-full w-full items-center space-x-2 rounded-full border border-violet-200/[.06] px-2 py-0.5"
-                            >
-                              <span
-                                class="text-xs font-medium text-violet-200 drop-shadow-[-12px_-4px_6px_rgba(237,233,254,0.2)]"
-                              >
-                                New
-                              </span>
-                            </div>
-                          </div>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 4 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Dropbox
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 5 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Gmail
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 6 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Salesforce
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Navigation column 4 -->
-                <div class="flex lg:justify-center">
-                  <div class="flex flex-col">
-                    <div class="flex items-center">
-                      <svg
-                        class="h-5 w-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                      >
-                        <g fill="#A1A1AA" stroke="#A78BFA">
-                          <line
-                            x1="5.75"
-                            y1="6.75"
-                            x2="7.75"
-                            y2="6.75"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></line>
-                          <line
-                            x1="5.75"
-                            y1="9.75"
-                            x2="12.25"
-                            y2="9.75"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></line>
-                          <line
-                            x1="5.75"
-                            y1="12.75"
-                            x2="12.25"
-                            y2="12.75"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></line>
-                          <path
-                            d="M2.75,14.25V3.75c0-1.105,.895-2,2-2h5.586c.265,0,.52,.105,.707,.293l3.914,3.914c.188,.188,.293,.442,.293,.707v7.586c0,1.105-.895,2-2,2H4.75c-1.105,0-2-.895-2-2Z"
-                            fill="none"
-                            stroke="#A1A1AA"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            d="M15.16,6.25h-3.41c-.552,0-1-.448-1-1V1.852"
-                            fill="none"
-                            stroke="#A1A1AA"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1.5"
-                          ></path>
-                        </g>
-                      </svg>
-
-                      <h4
-                        class="ml-4 flex flex-col align-middle text-sm font-semibold text-zinc-400"
-                      >
-                        Resources
-                      </h4>
-                    </div>
-                    <div class="mt-6 flex items-start">
-                      <div class="relative flex h-full w-5 justify-center">
-                        <div
-                          class="absolute -inset-y-2 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-violet-200/[0.12] to-violet-200/[0.04]"
-                        ></div>
-                      </div>
-
-                      <!-- Links -->
-                      <ul class="ml-4 space-y-5">
-                        <!-- Link 1 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Blog
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 2 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Newsletter
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 3 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Events
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 4 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Help center
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 5 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="#"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Tutorials
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-
-                        <!-- Link 6 -->
-                        <li class="group relative flex items-center">
-                          <a
-                            href="contact.html"
-                            class="text-sm font-semibold leading-none text-violet-50 hover:text-violet-400/95"
-                          >
-                            Support
-                          </a>
-
-                          <span
-                            class="absolute -inset-y-1.5 -left-[26.5px] w-px bg-gradient-to-b from-violet-400/0 via-violet-400/90 to-violet-400/0 opacity-0 duration-200 ease-in-out group-hover:opacity-100"
-                          ></span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Navigation column 5 -->
                 <div class="flex lg:justify-center">
                   <div class="flex flex-col">
                     <div class="flex items-center">
@@ -2105,6 +1501,8 @@
                     </div>
                   </div>
                 </div>
+
+               
               </div>
 
               <div
