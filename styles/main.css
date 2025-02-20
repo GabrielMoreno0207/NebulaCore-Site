@@ -1,3 +1,31 @@
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da scrollbar */
+  height: 10px; /* Altura da scrollbar horizontal */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+  background: #3E4C59; 
+  border-radius: 10px; /* Arredonda a trilha */
+}
+
+/* Estilizando a barra em si */
+::-webkit-scrollbar-thumb {
+  background: #7E5EF2; 
+  border-radius: 10px; /* Arredonda a barra */
+}
+
+/* Quando passa o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #5741A6; 
+}
+
+html {
+  scroll-padding-top: 80px; /* Ajuste conforme a altura do cabeçalho */
+}
+
+
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
   display: inline-block;
   vertical-align: middle;
